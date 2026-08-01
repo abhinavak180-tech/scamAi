@@ -1,289 +1,371 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SafeCall AI - Analysis Result</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Public+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-tertiary-container": "#ffac61",
-                    "secondary-container": "#a0f399",
-                    "surface-tint": "#2559bd",
-                    "on-secondary-fixed-variant": "#005312",
-                    "on-secondary-fixed": "#002204",
-                    "error-container": "#ffdad6",
-                    "surface": "#f8f9fb",
-                    "secondary": "#1b6d24",
-                    "inverse-surface": "#2d3133",
-                    "tertiary-container": "#763f00",
-                    "outline-variant": "#c3c6d5",
-                    "secondary-fixed-dim": "#88d982",
-                    "on-primary-fixed": "#001946",
-                    "primary-fixed": "#dae2ff",
-                    "surface-container": "#eceef0",
-                    "surface-container-high": "#e6e8ea",
-                    "primary": "#00327d",
-                    "on-primary-container": "#a5bdff",
-                    "on-tertiary-fixed-variant": "#6d3a00",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-fixed": "#ffdcc2",
-                    "tertiary": "#552c00",
-                    "surface-container-highest": "#e0e3e5",
-                    "inverse-on-surface": "#eff1f3",
-                    "error": "#ba1a1a",
-                    "on-background": "#191c1e",
-                    "on-primary-fixed-variant": "#00419e",
-                    "on-secondary": "#ffffff",
-                    "on-error": "#ffffff",
-                    "on-surface": "#191c1e",
-                    "on-primary": "#ffffff",
-                    "on-secondary-container": "#217128",
-                    "primary-container": "#0047ab",
-                    "outline": "#737784",
-                    "on-tertiary": "#ffffff",
-                    "primary-fixed-dim": "#b1c5ff",
-                    "on-tertiary-fixed": "#2e1500",
-                    "secondary-fixed": "#a3f69c",
-                    "surface-dim": "#d8dadc",
-                    "on-surface-variant": "#434653",
-                    "surface-variant": "#e0e3e5",
-                    "on-error-container": "#93000a",
-                    "surface-bright": "#f8f9fb",
-                    "surface-container-low": "#f2f4f6",
-                    "tertiary-fixed-dim": "#ffb77a",
-                    "background": "#f8f9fb",
-                    "inverse-primary": "#b1c5ff"
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SafeCall AI - Analysis Result</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Public+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffac61",
+                        "secondary-container": "#a0f399",
+                        "surface-tint": "#2559bd",
+                        "on-secondary-fixed-variant": "#005312",
+                        "on-secondary-fixed": "#002204",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9fb",
+                        "secondary": "#1b6d24",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#763f00",
+                        "outline-variant": "#c3c6d5",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-primary-fixed": "#001946",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#00327d",
+                        "on-primary-container": "#a5bdff",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc2",
+                        "tertiary": "#552c00",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#00419e",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#217128",
+                        "primary-container": "#0047ab",
+                        "outline": "#737784",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-tertiary-fixed": "#2e1500",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-dim": "#d8dadc",
+                        "on-surface-variant": "#434653",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "background": "#f8f9fb",
+                        "inverse-primary": "#b1c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "gutter": "24px",
-                    "container-max": "1200px",
-                    "margin-mobile": "16px",
-                    "xs": "4px",
-                    "base": "8px",
-                    "sm": "12px",
-                    "lg": "48px",
-                    "xl": "80px",
-                    "md": "24px"
-            },
-            "fontFamily": {
-                    "display-lg": ["Public Sans"],
-                    "headline-md": ["Public Sans"],
-                    "label-md": ["Inter"],
-                    "body-md": ["Inter"],
-                    "headline-lg-mobile": ["Public Sans"],
-                    "headline-lg": ["Public Sans"],
-                    "body-lg": ["Inter"],
-                    "caption": ["Inter"]
-            },
-            "fontSize": {
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         body {
             background-color: #F5F7F9;
             font-family: 'Inter', sans-serif;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+
         .alert-pulse {
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .7; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: .7;
+            }
         }
     </style>
 </head>
+
 <body class="bg-background text-on-surface">
-<!-- TopNavBar -->
-<header class="bg-surface dark:bg-on-background shadow-sm docked full-width top-0 z-50 sticky">
-<nav class="flex justify-between items-center px-gutter py-base w-full max-w-container-max mx-auto transition-all duration-200 ease-in-out">
-<div class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed cursor-pointer" onclick="window.location.href='check-message.html'">
+    <!-- TopNavBar -->
+    <header class="bg-surface dark:bg-on-background shadow-sm docked full-width top-0 z-50 sticky">
+        <nav
+            class="flex justify-between items-center px-gutter py-base w-full max-w-container-max mx-auto transition-all duration-200 ease-in-out">
+            <div class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed cursor-pointer"
+                onclick="window.location.href='check-message.html'">
                 SafeCall AI
             </div>
-</nav>
-</header>
-<main class="max-w-container-max mx-auto px-gutter py-lg">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
-<!-- Analysis Result Canvas -->
-<div class="lg:col-span-12 space-y-md">
-<!-- Main Status Card -->
-<section class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden relative">
-<div class="h-2 w-full bg-error"></div>
-<div class="p-md md:p-lg">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-md">
-<div class="flex items-center gap-sm">
-<div class="w-12 h-12 rounded-full bg-error flex items-center justify-center text-white" id="risk-badge-icon-bg">
-<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;" id="risk-badge-icon">warning</span>
-</div>
-<div>
-<h1 class="font-headline-lg text-headline-lg text-on-surface">Analysis Result</h1>
-<div class="flex items-center gap-xs text-error font-label-md text-label-md" id="risk-sub-label">
-<span class="material-symbols-outlined text-sm" id="risk-sub-label-icon">emergency_home</span> <span id="risk-sub-label-text">High Probability Scam detected</span>
+        </nav>
+    </header>
+    <main class="max-w-container-max mx-auto px-gutter py-lg">
+        <button
+            class="flex items-center gap-xs text-on-surface-variant hover:text-primary font-label-md text-label-md mb-md transition-colors"
+            onclick="window.location.href='check-message.html'">
+            <span class="material-symbols-outlined text-xl">arrow_back</span>
+            Back
+        </button>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+            <!-- Analysis Result Canvas -->
+            <div class="lg:col-span-12 space-y-md">
+                <!-- Main Status Card -->
+                <section
+                    class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden relative">
+                    <div class="h-2 w-full bg-error"></div>
+                    <div class="p-md md:p-lg">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-md">
+                            <div class="flex items-center gap-sm">
+                                <div class="w-12 h-12 rounded-full bg-error flex items-center justify-center text-white"
+                                    id="risk-badge-icon-bg">
+                                    <span class="material-symbols-outlined text-3xl"
+                                        style="font-variation-settings: 'FILL' 1;" id="risk-badge-icon">warning</span>
+                                </div>
+                                <div>
+                                    <h1 class="font-headline-lg text-headline-lg text-on-surface">Analysis Result</h1>
+                                    <div class="flex items-center gap-xs text-error font-label-md text-label-md"
+                                        id="risk-sub-label">
+                                        <span class="material-symbols-outlined text-sm"
+                                            id="risk-sub-label-icon">emergency_home</span> <span
+                                            id="risk-sub-label-text">High Probability Scam detected</span>
                                     </div>
-</div>
-</div>
-<div class="flex items-center gap-md">
-    <!-- Circular Risk Ring -->
-    <div class="relative w-16 h-16 flex items-center justify-center" id="risk-ring-container">
-        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-            <path class="text-surface-container-high" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-            <path class="text-error transition-all duration-1000 ease-out" stroke-dasharray="0, 100" stroke-width="3.5" stroke-linecap="round" stroke="currentColor" fill="none" id="risk-ring-path" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-        </svg>
-        <span class="absolute font-headline-md text-headline-md text-on-surface" id="risk-percentage-text">0%</span>
-    </div>
-    <span class="inline-flex items-center rounded-full bg-error px-md py-xs text-white font-label-md text-label-md alert-pulse uppercase tracking-wider" id="scam-type-badge">
-                                Suspicious Call
-                            </span>
-</div>
-</div>
-<!-- Explanation Card -->
-<div class="p-md bg-error-container rounded-lg border-l-4 border-error mb-lg" id="explanation-card">
-<h2 class="font-headline-md text-headline-md text-on-error-container mb-xs" id="explanation-title">Why is this suspicious?</h2>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-sm" id="explanation-text">
-    Analyzing the request content...
-</p>
-<div class="flex flex-wrap gap-xs mt-sm" id="warning-signs-container">
-    <!-- Warning signs populated dynamically -->
-</div>
-</div>
-<!-- Live Web Verification Card -->
-<div class="p-md bg-error-container rounded-lg border-l-4 border-error mb-lg hidden" id="web-check-card">
-<div class="flex items-center justify-between mb-sm">
-    <h2 class="font-headline-md text-headline-md text-on-error-container">Live Web Verification</h2>
-    <span class="inline-flex items-center gap-xs bg-surface/50 px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant">
-        <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-        </span>
-        via Groq
-    </span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="web-check-text">
-    Querying recent scam databases...
-</p>
-</div>
-<!-- Action Advice Card -->
-<div class="p-md bg-surface-container-low rounded-lg border-l-4 border-primary mb-lg" id="recommendation-card">
-<h2 class="font-headline-md text-headline-md text-primary mb-xs">Actionable Advice</h2>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="recommendation-text">
-    -
-</p>
-</div>
-<!-- Action Buttons Section -->
-<div class="grid grid-cols-1 gap-sm md:grid-cols-2">
-<button class="flex items-center justify-center gap-sm bg-white border border-outline text-on-surface-variant font-label-md text-label-md py-md px-md rounded-lg hover:bg-surface-container transition-all" onclick="alert('Simulating call to family member...')">
-<span class="material-symbols-outlined">group</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-md">
+                                <!-- Circular Risk Ring -->
+                                <div class="relative w-16 h-16 flex items-center justify-center"
+                                    id="risk-ring-container">
+                                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                        <path class="text-surface-container-high" stroke-width="3.5"
+                                            stroke="currentColor" fill="none"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="text-error transition-all duration-1000 ease-out"
+                                            stroke-dasharray="0, 100" stroke-width="3.5" stroke-linecap="round"
+                                            stroke="currentColor" fill="none" id="risk-ring-path"
+                                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <span class="absolute font-headline-md text-headline-md text-on-surface"
+                                        id="risk-percentage-text">0%</span>
+                                </div>
+                                <span
+                                    class="inline-flex items-center rounded-full bg-error px-md py-xs text-white font-label-md text-label-md alert-pulse uppercase tracking-wider"
+                                    id="scam-type-badge">
+                                    Suspicious Call
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Explanation Card -->
+                        <div class="p-md bg-error-container rounded-lg border-l-4 border-error mb-lg"
+                            id="explanation-card">
+                            <h2 class="font-headline-md text-headline-md text-on-error-container mb-xs"
+                                id="explanation-title">Why is this suspicious?</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-sm"
+                                id="explanation-text">
+                                Analyzing the request content...
+                            </p>
+                            <div class="flex flex-wrap gap-xs mt-sm" id="warning-signs-container">
+                                <!-- Warning signs populated dynamically -->
+                            </div>
+                        </div>
+                        <!-- Live Web Verification Card -->
+                        <div class="p-md bg-error-container rounded-lg border-l-4 border-error mb-lg hidden"
+                            id="web-check-card">
+                            <div class="flex items-center justify-between mb-sm">
+                                <h2 class="font-headline-md text-headline-md text-on-error-container">Live Web
+                                    Verification</h2>
+                                <span
+                                    class="inline-flex items-center gap-xs bg-surface/50 px-sm py-xs rounded-full font-label-md text-label-md text-on-surface-variant">
+                                    <span class="relative flex h-2 w-2">
+                                        <span
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                                    </span>
+                                    via Groq
+                                </span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                                id="web-check-text">
+                                Querying recent scam databases...
+                            </p>
+                        </div>
+                        <!-- Action Advice Card -->
+                        <div class="p-md bg-surface-container-low rounded-lg border-l-4 border-primary mb-lg"
+                            id="recommendation-card">
+                            <h2 class="font-headline-md text-headline-md text-primary mb-xs">Actionable Advice</h2>
+                            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                                id="recommendation-text">
+                                -
+                            </p>
+                        </div>
+                        <!-- Action Buttons Section -->
+                        <div class="grid grid-cols-1 gap-sm md:grid-cols-2">
+                            <button
+                                class="flex items-center justify-center gap-sm bg-white border border-outline text-on-surface-variant font-label-md text-label-md py-md px-md rounded-lg hover:bg-surface-container transition-all"
+                                onclick="alert('Simulating call to family member...')">
+                                <span class="material-symbols-outlined">group</span>
                                 Call Family Member
                             </button>
-<button class="flex items-center justify-center gap-sm bg-white border border-outline text-on-surface-variant font-label-md text-label-md py-md px-md rounded-lg hover:bg-surface-container transition-all" onclick="window.location.href='talk-to-expert.html'">
-<span class="material-symbols-outlined">support_agent</span>
+                            <button
+                                class="flex items-center justify-center gap-sm bg-white border border-outline text-on-surface-variant font-label-md text-label-md py-md px-md rounded-lg hover:bg-surface-container transition-all"
+                                onclick="window.location.href='talk-to-expert.html'">
+                                <span class="material-symbols-outlined">support_agent</span>
                                 Talk to a Safety Expert
                             </button>
-</div>
-</div>
-</section>
-<!-- What to do next Section - Bento Style -->
-<section>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-md">What to do next</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
-<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container mb-sm">
-<span class="material-symbols-outlined">block</span>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface mb-xs">Block the Number</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Prevent further contact by adding this sender to your device's block list immediately.</p>
-</div>
-<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
-<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container mb-sm">
-<span class="material-symbols-outlined">link_off</span>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface mb-xs">Do Not Click Links</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Clicking links can install malware or lead to credential harvesting phishing sites.</p>
-</div>
-<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
-<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-sm">
-<span class="material-symbols-outlined">security_update_good</span>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface mb-xs">Update Passwords</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">If you entered any data, change your related account passwords from a separate device.</p>
-</div>
-<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
-<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-sm">
-<span class="material-symbols-outlined">shield_with_heart</span>
-</div>
-<h4 class="font-label-md text-label-md text-on-surface mb-xs">Enable 2FA</h4>
-<p class="font-body-md text-body-md text-on-surface-variant">Add an extra layer of protection to your most sensitive banking and social accounts.</p>
-</div>
-</div>
-</section>
-</div>
+                        </div>
+                    </div>
+                </section>
+                <!-- What to do next Section - Bento Style -->
+                <section>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-md">What to do next</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                        <div
+                            class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container mb-sm">
+                                <span class="material-symbols-outlined">block</span>
+                            </div>
+                            <h4 class="font-label-md text-label-md text-on-surface mb-xs">Block the Number</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Prevent further contact by
+                                adding this sender to your device's block list immediately.</p>
+                        </div>
 
-</div>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-highest dark:bg-on-background w-full py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center mt-xl">
-<div class="mb-md md:mb-0">
-<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed block mb-xs">SafeCall AI</span>
-<p class="font-body-md text-body-md text-on-surface-variant">© 2024 SafeCall AI. Protective Intelligence for Everyone.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-md"><a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="emergency-help.html">Emergency Contact</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="privacy.html">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="terms.html">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all" href="#">Language: English</a>
-</div>
-</footer>
-<!-- Interactive Layer for scan animation -->
-<div class="fixed inset-0 z-[60] bg-on-background/40 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" id="scan-overlay">
-<div class="bg-white p-lg rounded-2xl shadow-2xl text-center max-w-sm">
-<div class="relative w-24 h-24 mx-auto mb-md">
-<div class="absolute inset-0 rounded-full border-4 border-primary-container border-t-primary animate-spin"></div>
-<div class="absolute inset-2 rounded-full bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-4xl">shield</span>
-</div>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Verifying Identity...</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Our AI is cross-referencing global scam databases.</p>
-</div>
-</div>
-<script>
+                        <div
+                            class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container mb-sm">
+                                <span class="material-symbols-outlined">link_off</span>
+                            </div>
+                            <h4 class="font-label-md text-label-md text-on-surface mb-xs">Do Not Click Links</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Clicking links can install
+                                malware or lead to credential harvesting phishing sites.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-sm">
+                                <span class="material-symbols-outlined">security_update_good</span>
+                            </div>
+                            <h4 class="font-label-md text-label-md text-on-surface mb-xs">Update Passwords</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">If you entered any data, change
+                                your related account passwords from a separate device.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-low p-md rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-sm">
+                                <span class="material-symbols-outlined">shield_with_heart</span>
+                            </div>
+                            <h4 class="font-label-md text-label-md text-on-surface mb-xs">Enable 2FA</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Add an extra layer of
+                                protection to your most sensitive banking and social accounts.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-highest dark:bg-on-background w-full py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center mt-xl">
+        <div class="mb-md md:mb-0">
+            <span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed block mb-xs">SafeCall
+                AI</span>
+            <p class="font-body-md text-body-md text-on-surface-variant">© 2024 SafeCall AI. Protective Intelligence for
+                Everyone.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-md"><a
+                class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                href="emergency-help.html">Emergency Contact</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all"
+                href="privacy.html">Privacy Policy</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all"
+                href="terms.html">Terms of Service</a>
+            <a class="font-body-md text-body-md text-on-surface-variant hover:underline hover:text-primary transition-all"
+                href="#">Language: English</a>
+        </div>
+    </footer>
+    <!-- Interactive Layer for scan animation -->
+    <div class="fixed inset-0 z-[60] bg-on-background/40 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+        id="scan-overlay">
+        <div class="bg-white p-lg rounded-2xl shadow-2xl text-center max-w-sm">
+            <div class="relative w-24 h-24 mx-auto mb-md">
+                <div
+                    class="absolute inset-0 rounded-full border-4 border-primary-container border-t-primary animate-spin">
+                </div>
+                <div class="absolute inset-2 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-4xl">shield</span>
+                </div>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Verifying Identity...</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">Our AI is cross-referencing global scam
+                databases.</p>
+        </div>
+    </div>
+    <script>
         // Micro-interactions
         document.querySelectorAll('button').forEach(btn => {
             btn.addEventListener('mousedown', () => {
@@ -327,11 +409,11 @@
 
             // Default classes to remove
             const colors = ['bg-error', 'text-error', 'bg-error-container', 'border-error', 'text-on-error-container',
-                            'bg-secondary', 'text-secondary', 'bg-secondary-container', 'border-secondary', 'text-on-secondary-container',
-                            'bg-tertiary-fixed', 'text-tertiary', 'bg-tertiary-fixed/20', 'border-tertiary', 'text-on-tertiary-container',
-                            'bg-tertiary-fixed-dim', 'text-on-tertiary-fixed', 'text-on-tertiary-fixed-variant',
-                            'bg-secondary-fixed', 'text-on-secondary-fixed', 'bg-secondary-container/20'];
-            
+                'bg-secondary', 'text-secondary', 'bg-secondary-container', 'border-secondary', 'text-on-secondary-container',
+                'bg-tertiary-fixed', 'text-tertiary', 'bg-tertiary-fixed/20', 'border-tertiary', 'text-on-tertiary-container',
+                'bg-tertiary-fixed-dim', 'text-on-tertiary-fixed', 'text-on-tertiary-fixed-variant',
+                'bg-secondary-fixed', 'text-on-secondary-fixed', 'bg-secondary-container/20'];
+
             const removeColors = (el) => {
                 if (el) colors.forEach(c => el.classList.remove(c));
             };
@@ -340,7 +422,7 @@
             if (risk.toLowerCase() === 'high') {
                 removeColors(iconBg); iconBg.classList.add('bg-error', 'text-white');
                 icon.innerText = 'warning';
-                
+
                 removeColors(subLabel); subLabel.classList.add('text-error');
                 subLabelIcon.innerText = 'emergency_home';
                 subLabelText.innerText = 'High Risk Scam Detected';
@@ -350,7 +432,7 @@
 
                 removeColors(explanationCard); explanationCard.classList.add('bg-error-container', 'border-error');
                 explanationTitle.className = 'font-headline-md text-headline-md text-on-error-container mb-xs';
-                
+
                 if (webCard) {
                     removeColors(webCard); webCard.classList.add('bg-error-container', 'border-error');
                     webCard.querySelector('h2').className = 'font-headline-md text-headline-md text-on-error-container';
@@ -369,7 +451,7 @@
 
                 removeColors(explanationCard); explanationCard.classList.add('bg-tertiary-fixed/20', 'border-tertiary');
                 explanationTitle.className = 'font-headline-md text-headline-md text-on-tertiary-fixed-variant mb-xs';
-                
+
                 if (webCard) {
                     removeColors(webCard); webCard.classList.add('bg-tertiary-fixed/20', 'border-tertiary');
                     webCard.querySelector('h2').className = 'font-headline-md text-headline-md text-on-tertiary-fixed-variant';
@@ -388,7 +470,7 @@
 
                 removeColors(explanationCard); explanationCard.classList.add('bg-secondary-container/20', 'border-secondary');
                 explanationTitle.className = 'font-headline-md text-headline-md text-on-secondary-container mb-xs';
-                
+
                 if (webCard) {
                     removeColors(webCard); webCard.classList.add('bg-secondary-container/20', 'border-secondary');
                     webCard.querySelector('h2').className = 'font-headline-md text-headline-md text-on-secondary-container';
@@ -424,13 +506,15 @@
                 ringText.innerText = score + '%';
                 // Set ring color matching level
                 ringPath.className = risk.toLowerCase() === 'high' ? 'text-error transition-all duration-1000' :
-                                     risk.toLowerCase() === 'medium' ? 'text-on-tertiary-fixed-variant transition-all duration-1000' : 
-                                     'text-secondary transition-all duration-1000';
-                
+                    risk.toLowerCase() === 'medium' ? 'text-on-tertiary-fixed-variant transition-all duration-1000' :
+                        'text-secondary transition-all duration-1000';
+
                 setTimeout(() => {
                     ringPath.setAttribute('stroke-dasharray', `${score}, 100`);
                 }, 100);
             }
         });
     </script>
-</body></html>
+</body>
+
+</html>
