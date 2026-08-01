@@ -4,12 +4,40 @@
         {
             "src": "app.py",
             "use": "@vercel/python"
+        },
+        {
+            "src": "*.html",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/health",
             "dest": "app.py"
+        },
+        {
+            "src": "/analyze-text",
+            "dest": "app.py"
+        },
+        {
+            "src": "/analyze-image",
+            "dest": "app.py"
+        },
+        {
+            "src": "/analyze-audio",
+            "dest": "app.py"
+        },
+        {
+            "src": "/chat",
+            "dest": "app.py"
+        },
+        {
+            "src": "/",
+            "dest": "/index.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
         }
     ]
 }
