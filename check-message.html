@@ -1,124 +1,143 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SafeCall AI - Check a Message</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Public+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-tertiary-container": "#ffac61",
-                    "secondary-container": "#a0f399",
-                    "surface-tint": "#2559bd",
-                    "on-secondary-fixed-variant": "#005312",
-                    "on-secondary-fixed": "#002204",
-                    "error-container": "#ffdad6",
-                    "surface": "#f8f9fb",
-                    "secondary": "#1b6d24",
-                    "inverse-surface": "#2d3133",
-                    "tertiary-container": "#763f00",
-                    "outline-variant": "#c3c6d5",
-                    "secondary-fixed-dim": "#88d982",
-                    "on-primary-fixed": "#001946",
-                    "primary-fixed": "#dae2ff",
-                    "surface-container": "#eceef0",
-                    "surface-container-high": "#e6e8ea",
-                    "primary": "#00327d",
-                    "on-primary-container": "#a5bdff",
-                    "on-tertiary-fixed-variant": "#6d3a00",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-fixed": "#ffdcc2",
-                    "tertiary": "#552c00",
-                    "surface-container-highest": "#e0e3e5",
-                    "inverse-on-surface": "#eff1f3",
-                    "error": "#ba1a1a",
-                    "on-background": "#191c1e",
-                    "on-primary-fixed-variant": "#00419e",
-                    "on-secondary": "#ffffff",
-                    "on-error": "#ffffff",
-                    "on-surface": "#191c1e",
-                    "on-primary": "#ffffff",
-                    "on-secondary-container": "#217128",
-                    "primary-container": "#0047ab",
-                    "outline": "#737784",
-                    "on-tertiary": "#ffffff",
-                    "primary-fixed-dim": "#b1c5ff",
-                    "on-tertiary-fixed": "#2e1500",
-                    "secondary-fixed": "#a3f69c",
-                    "surface-dim": "#d8dadc",
-                    "on-surface-variant": "#434653",
-                    "surface-variant": "#e0e3e5",
-                    "on-error-container": "#93000a",
-                    "surface-bright": "#f8f9fb",
-                    "surface-container-low": "#f2f4f6",
-                    "tertiary-fixed-dim": "#ffb77a",
-                    "background": "#f8f9fb",
-                    "inverse-primary": "#b1c5ff"
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SafeCall AI - Check a Message</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Public+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffac61",
+                        "secondary-container": "#a0f399",
+                        "surface-tint": "#2559bd",
+                        "on-secondary-fixed-variant": "#005312",
+                        "on-secondary-fixed": "#002204",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9fb",
+                        "secondary": "#1b6d24",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#763f00",
+                        "outline-variant": "#c3c6d5",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-primary-fixed": "#001946",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#00327d",
+                        "on-primary-container": "#a5bdff",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc2",
+                        "tertiary": "#552c00",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#00419e",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#217128",
+                        "primary-container": "#0047ab",
+                        "outline": "#737784",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-tertiary-fixed": "#2e1500",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-dim": "#d8dadc",
+                        "on-surface-variant": "#434653",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "background": "#f8f9fb",
+                        "inverse-primary": "#b1c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                },
             },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "gutter": "24px",
-                    "container-max": "1200px",
-                    "margin-mobile": "16px",
-                    "xs": "4px",
-                    "base": "8px",
-                    "sm": "12px",
-                    "lg": "48px",
-                    "xl": "80px",
-                    "md": "24px"
-            },
-            "fontFamily": {
-                    "display-lg": ["Public Sans"],
-                    "headline-md": ["Public Sans"],
-                    "label-md": ["Inter"],
-                    "body-md": ["Inter"],
-                    "headline-lg-mobile": ["Public Sans"],
-                    "headline-lg": ["Public Sans"],
-                    "body-lg": ["Inter"],
-                    "caption": ["Inter"]
-            },
-            "fontSize": {
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
+        }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             display: inline-block;
             vertical-align: middle;
         }
+
         .pulse-soft {
             animation: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
+
         @keyframes pulse-soft {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
+
         .transition-standard {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .bento-card {
             background-color: #ffffff;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
@@ -126,135 +145,170 @@
         }
     </style>
 </head>
+
 <body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden">
-<!-- TopNavBar -->
-<header class="bg-surface dark:bg-on-background shadow-sm sticky top-0 z-50">
-<nav class="flex justify-between items-center px-gutter py-base w-full max-w-container-max mx-auto h-20">
-<div class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed cursor-pointer" onclick="window.location.href='check-message.html'">
+    <!-- TopNavBar -->
+    <header class="bg-surface dark:bg-on-background shadow-sm sticky top-0 z-50">
+        <nav class="flex justify-between items-center px-gutter py-base w-full max-w-container-max mx-auto h-20">
+            <div class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed cursor-pointer"
+                onclick="window.location.href='check-message.html'">
                 SafeCall AI
             </div>
-</nav>
-</header>
-<main class="flex-grow flex flex-col items-center justify-center py-xl px-margin-mobile md:px-gutter relative">
-<!-- Subtle Ambient Background -->
-<div class="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
-<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary-container rounded-full blur-[120px]"></div>
-<div class="absolute -bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-secondary-container rounded-full blur-[120px]"></div>
-</div>
-<div class="max-w-[800px] w-full z-10">
-<!-- Header Section -->
-<section class="text-center mb-lg">
-<h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary mb-sm">
+        </nav>
+    </header>
+    <main class="flex-grow flex flex-col items-center justify-center py-xl px-margin-mobile md:px-gutter relative">
+        <!-- Subtle Ambient Background -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+            <div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary-container rounded-full blur-[120px]">
+            </div>
+            <div
+                class="absolute -bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-secondary-container rounded-full blur-[120px]">
+            </div>
+        </div>
+        <div class="max-w-[800px] w-full z-10">
+            <!-- Header Section -->
+            <section class="text-center mb-lg">
+                <h1 class="font-headline-lg text-headline-lg md:text-display-lg md:font-display-lg text-primary mb-sm">
                     How would you like to check?
                 </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px] mx-auto">
-                    Choose your method and our Protective Intelligence will instantly scan for signs of fraud, phishing, or malicious intent.
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px] mx-auto">
+                    Choose your method and our Protective Intelligence will instantly scan for signs of fraud, phishing,
+                    or malicious intent.
                 </p>
-</section>
-<!-- Interaction Modes -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-md">
-<!-- Option 1: Paste Text (Active by Default) -->
-<button class="bento-card p-md rounded-xl flex flex-col items-center gap-sm transition-standard border-primary border-2" id="tab-text" onclick="switchTab('text')">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-[28px]">content_paste</span>
-</div>
-<span class="font-label-md text-label-md text-on-surface">Paste Text</span>
-</button>
-<!-- Option 2: Upload Photo -->
-<button class="bento-card p-md rounded-xl flex flex-col items-center gap-sm transition-standard hover:border-primary-fixed border-transparent border-2" id="tab-photo" onclick="switchTab('photo')">
-<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant text-[28px]">add_a_photo</span>
-</div>
-<span class="font-label-md text-label-md text-on-surface-variant">Upload Photo</span>
-</button>
-<!-- Option 3: Voice Input -->
-<button class="bento-card p-md rounded-xl flex flex-col items-center gap-sm transition-standard hover:border-primary-fixed border-transparent border-2" id="tab-voice" onclick="switchTab('voice')">
-<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
-<span class="material-symbols-outlined text-on-surface-variant text-[28px]">mic</span>
-</div>
-<span class="font-label-md text-label-md text-on-surface-variant">Voice Input</span>
-</button>
-</div>
-<!-- Content Area: Text Input (Primary) -->
-<div class="bento-card p-md md:p-lg rounded-xl flex flex-col gap-md" id="content-text">
-<div class="flex items-center justify-between mb-xs">
-<label class="font-label-md text-label-md text-on-surface-variant" for="message-paste">
+            </section>
+            <!-- Interaction Modes -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-md">
+                <!-- Option 1: Paste Text (Active by Default) -->
+                <button
+                    class="bento-card p-md rounded-xl flex flex-col items-center gap-sm transition-standard border-primary border-2"
+                    id="tab-text" onclick="switchTab('text')">
+                    <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-[28px]">content_paste</span>
+                    </div>
+                    <span class="font-label-md text-label-md text-on-surface">Paste Text</span>
+                </button>
+                <!-- Option 2: Upload Photo -->
+                <button
+                    class="bento-card p-md rounded-xl flex flex-col items-center gap-sm transition-standard hover:border-primary-fixed border-transparent border-2"
+                    id="tab-photo" onclick="switchTab('photo')">
+                    <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[28px]">add_a_photo</span>
+                    </div>
+                    <span class="font-label-md text-label-md text-on-surface-variant">Upload Photo</span>
+                </button>
+                <!-- Option 3: Voice Input -->
+                <button
+                    class="bento-card p-md rounded-xl flex flex-col items-center gap-sm transition-standard hover:border-primary-fixed border-transparent border-2"
+                    id="tab-voice" onclick="switchTab('voice')">
+                    <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+                        <span class="material-symbols-outlined text-on-surface-variant text-[28px]">mic</span>
+                    </div>
+                    <span class="font-label-md text-label-md text-on-surface-variant">Voice Input</span>
+                </button>
+            </div>
+            <!-- Content Area: Text Input (Primary) -->
+            <div class="bento-card p-md md:p-lg rounded-xl flex flex-col gap-md" id="content-text">
+                <div class="flex items-center justify-between mb-xs">
+                    <label class="font-label-md text-label-md text-on-surface-variant" for="message-paste">
                         Paste your message below
                     </label>
-<span class="text-caption font-caption text-outline" id="char-count">0 / 2000 characters</span>
-</div>
-<textarea class="w-full h-64 p-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-standard font-body-md text-body-md resize-none bg-surface-bright" id="message-paste" placeholder="Enter suspicious email content, text message, or website link here..."></textarea>
-</div>
-<!-- Content Area: Photo (Hidden) -->
-<div class="hidden bento-card p-lg rounded-xl flex flex-col items-center justify-center text-center border-dashed border-2 border-outline-variant py-xl" id="content-photo">
-<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center mb-md pulse-soft">
-<span class="material-symbols-outlined text-on-surface-variant text-[40px]">file_upload</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-xs" id="photo-title">Drop image here or click to browse</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md" id="photo-desc">Supports JPG, PNG up to 5MB. Ideal for screenshots of suspicious texts.</p>
-<input class="hidden" id="photo-upload" type="file" accept="image/png, image/jpeg, image/jpg"/>
-<label class="cursor-pointer bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-label-md hover:brightness-110 transition-standard" for="photo-upload">
+                    <span class="text-caption font-caption text-outline" id="char-count">0 / 2000 characters</span>
+                </div>
+                <textarea
+                    class="w-full h-64 p-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-standard font-body-md text-body-md resize-none bg-surface-bright"
+                    id="message-paste"
+                    placeholder="Enter suspicious email content, text message, or website link here..."></textarea>
+            </div>
+            <!-- Content Area: Photo (Hidden) -->
+            <div class="hidden bento-card p-lg rounded-xl flex flex-col items-center justify-center text-center border-dashed border-2 border-outline-variant py-xl"
+                id="content-photo">
+                <div
+                    class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center mb-md pulse-soft">
+                    <span class="material-symbols-outlined text-on-surface-variant text-[40px]">file_upload</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-xs" id="photo-title">Drop image here or
+                    click to browse</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-md" id="photo-desc">Supports JPG, PNG up
+                    to 5MB. Ideal for screenshots of suspicious texts.</p>
+                <input class="hidden" id="photo-upload" type="file" accept="image/png, image/jpeg, image/jpg" />
+                <label
+                    class="cursor-pointer bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-label-md hover:brightness-110 transition-standard"
+                    for="photo-upload">
                     Select a File
                 </label>
-</div>
-<!-- Content Area: Voice (Hidden) -->
-<div class="hidden bento-card p-lg rounded-xl flex flex-col items-center justify-center text-center py-xl" id="content-voice">
-<div class="w-24 h-24 bg-error-container text-error rounded-full flex items-center justify-center mb-md cursor-pointer hover:scale-105 transition-standard" id="mic-trigger">
-<span class="material-symbols-outlined text-[48px]">mic</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-xs" id="voice-title">Tap to Record</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-md" id="voice-desc">Transcribe and analyze a phone call or voicemail snippet in real-time.</p>
-<div class="flex items-center gap-base" id="voice-dots">
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
-</div>
-</div>
-<!-- Unified Analyze Button -->
-<div class="flex flex-col md:flex-row items-center gap-md mt-md justify-center w-full">
-<button class="w-full md:w-auto bg-primary text-on-primary px-xl py-md rounded-full font-headline-md text-headline-md hover:bg-primary-container transition-all shadow-md flex items-center justify-center gap-sm" onclick="triggerAnalysis(event)">
-                        Analyze Message
-                        <span class="material-symbols-outlined">analytics</span>
-</button>
-</div>
-<!-- Quick Tips Bento -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-lg">
-<div class="bento-card p-md rounded-xl flex gap-md items-start">
-<div class="bg-secondary-fixed-dim p-sm rounded-lg">
-<span class="material-symbols-outlined text-on-secondary-fixed">verified</span>
-</div>
-<div>
-<h4 class="font-label-md text-label-md text-on-surface">Precision Scan</h4>
-<p class="font-caption text-caption text-on-surface-variant">Our models identify emotional manipulation and linguistic patterns common in scams.</p>
-</div>
-</div>
-<div class="bento-card p-md rounded-xl flex gap-md items-start">
-<div class="bg-tertiary-fixed-dim p-sm rounded-lg">
-<span class="material-symbols-outlined text-on-tertiary-fixed">info</span>
-</div>
-<div>
-<h4 class="font-label-md text-label-md text-on-surface">Urgent Alert</h4>
-<p class="font-caption text-caption text-on-surface-variant">If immediate danger is detected, we provide one-tap access to authorities.</p>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="bg-surface-container-highest dark:bg-on-background w-full">
-<div class="w-full py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
-<div class="flex flex-col items-center md:items-start">
-<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-xs">SafeCall AI</span>
-<p class="font-body-md text-body-md text-on-surface-variant">© 2024 SafeCall AI. Protective Intelligence for Everyone.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-md font-body-md text-body-md"><a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="emergency-help.html">Emergency Contact</a>
-<a class="text-on-surface-variant hover:underline hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
-<a class="text-on-surface-variant hover:underline hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
-<span class="text-on-surface-variant font-bold text-primary">Language: English</span>
-</div>
-</div>
-</footer>
-<script>
+            </div>
+            <!-- Content Area: Voice (Hidden) -->
+            <div class="hidden bento-card p-lg rounded-xl flex flex-col items-center justify-center text-center py-xl"
+                id="content-voice">
+                <div class="w-24 h-24 bg-error-container text-error rounded-full flex items-center justify-center mb-md cursor-pointer hover:scale-105 transition-standard"
+                    id="mic-trigger">
+                    <span class="material-symbols-outlined text-[48px]">mic</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-xs" id="voice-title">Tap to Record</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-md" id="voice-desc">Transcribe and
+                    analyze a phone call or voicemail snippet in real-time.</p>
+                <div class="flex items-center gap-base" id="voice-dots">
+                    <div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+                    <div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+                    <div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+                </div>
+            </div>
+            <!-- Unified Analyze Button -->
+            <div class="flex flex-col md:flex-row items-center gap-md mt-md justify-center w-full">
+                <button
+                    class="w-full md:w-auto bg-primary text-on-primary px-xl py-md rounded-full font-headline-md text-headline-md hover:bg-primary-container transition-all shadow-md flex items-center justify-center gap-sm"
+                    onclick="triggerAnalysis(event)">
+                    Analyze Message
+                    <span class="material-symbols-outlined">analytics</span>
+                </button>
+            </div>
+            <!-- Quick Tips Bento -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-lg">
+                <div class="bento-card p-md rounded-xl flex gap-md items-start">
+                    <div class="bg-secondary-fixed-dim p-sm rounded-lg">
+                        <span class="material-symbols-outlined text-on-secondary-fixed">verified</span>
+                    </div>
+                    <div>
+                        <h4 class="font-label-md text-label-md text-on-surface">Precision Scan</h4>
+                        <p class="font-caption text-caption text-on-surface-variant">Our models identify emotional
+                            manipulation and linguistic patterns common in scams.</p>
+                    </div>
+                </div>
+                <div class="bento-card p-md rounded-xl flex gap-md items-start">
+                    <div class="bg-tertiary-fixed-dim p-sm rounded-lg">
+                        <span class="material-symbols-outlined text-on-tertiary-fixed">info</span>
+                    </div>
+                    <div>
+                        <h4 class="font-label-md text-label-md text-on-surface">Urgent Alert</h4>
+                        <p class="font-caption text-caption text-on-surface-variant">If immediate danger is detected, we
+                            provide one-tap access to authorities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-highest dark:bg-on-background w-full">
+        <div
+            class="w-full py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+            <div class="flex flex-col items-center md:items-start">
+                <span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed mb-xs">SafeCall
+                    AI</span>
+                <p class="font-body-md text-body-md text-on-surface-variant">© 2024 SafeCall AI. Protective Intelligence
+                    for Everyone.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-md font-body-md text-body-md"><a
+                    class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                    href="emergency-help.html">Emergency Contact</a>
+                <a class="text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                    href="privacy.html">Privacy Policy</a>
+                <a class="text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                    href="terms.html">Terms of Service</a>
+                <span class="text-on-surface-variant font-bold text-primary">Language: English</span>
+            </div>
+        </div>
+    </footer>
+    <script>
         let currentTab = 'text';
         let mediaRecorder = null;
         let audioChunks = [];
@@ -344,7 +398,7 @@
                             audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
                             voiceTitle.innerText = 'Recording Captured';
                             voiceDesc.innerText = 'Audio recording is ready for analysis.';
-                            
+
                             // Reset style
                             mic.classList.replace('bg-error', 'bg-error-container');
                             mic.classList.replace('text-on-error', 'text-error');
@@ -354,7 +408,7 @@
                         mediaRecorder.start();
                         voiceTitle.innerText = 'Recording...';
                         voiceDesc.innerText = 'Speaking into microphone... Tap again to finish.';
-                        
+
                         // Active style
                         mic.classList.replace('bg-error-container', 'bg-error');
                         mic.classList.replace('text-error', 'text-on-error');
@@ -370,107 +424,113 @@
             });
         }
     </script>
-<!-- Interactive Layer for scan animation -->
-<div class="fixed inset-0 z-[60] bg-on-background/40 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" id="scan-overlay">
-<div class="bg-white p-lg rounded-2xl shadow-2xl text-center max-w-sm">
-<div class="relative w-24 h-24 mx-auto mb-md">
-<div class="absolute inset-0 rounded-full border-4 border-primary-container border-t-primary animate-spin"></div>
-<div class="absolute inset-2 rounded-full bg-primary/10 flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-4xl">shield</span>
-</div>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Verifying Message...</h3>
-<p class="font-body-md text-body-md text-on-surface-variant" id="scan-status-text">Reading the message...</p>
-</div>
-</div>
-<script>
-function triggerAnalysis(e) {
-    if (e) e.preventDefault();
+    <!-- Interactive Layer for scan animation -->
+    <div class="fixed inset-0 z-[60] bg-on-background/40 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+        id="scan-overlay">
+        <div class="bg-white p-lg rounded-2xl shadow-2xl text-center max-w-sm">
+            <div class="relative w-24 h-24 mx-auto mb-md">
+                <div
+                    class="absolute inset-0 rounded-full border-4 border-primary-container border-t-primary animate-spin">
+                </div>
+                <div class="absolute inset-2 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-4xl">shield</span>
+                </div>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Verifying Message...</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant" id="scan-status-text">Reading the message...
+            </p>
+        </div>
+    </div>
+    <script>
+        function triggerAnalysis(e) {
+            if (e) e.preventDefault();
 
-    let requestPromise = null;
-    const statusMessages = [
-        "Reading the message...",
-        "Searching the web for recent scam reports...",
-        "Verifying links and sender details...",
-        "Preparing a simple explanation..."
-    ];
-    let currentStatusIdx = 0;
-    const statusTextEl = document.getElementById('scan-status-text');
+            let requestPromise = null;
+            const statusMessages = [
+                "Reading the message...",
+                "Searching the web for recent scam reports...",
+                "Verifying links and sender details...",
+                "Preparing a simple explanation..."
+            ];
+            let currentStatusIdx = 0;
+            const statusTextEl = document.getElementById('scan-status-text');
 
-    if (currentTab === 'text') {
-        const text = textarea.value.trim();
-        if (!text) {
-            alert('Please paste a message to analyze.');
-            return;
-        }
-        
-        requestPromise = fetch('http://localhost:5000/analyze-text', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: text })
-        });
+            if (currentTab === 'text') {
+                const text = textarea.value.trim();
+                if (!text) {
+                    alert('Please paste a message to analyze.');
+                    return;
+                }
 
-    } else if (currentTab === 'photo') {
-        if (!photoUploadInput.files || photoUploadInput.files.length === 0) {
-            alert('Please select an image to analyze.');
-            return;
-        }
-        
-        const formData = new FormData();
-        formData.append('image', photoUploadInput.files[0]);
-        
-        requestPromise = fetch('http://localhost:5000/analyze-image', {
-            method: 'POST',
-            body: formData
-        });
+                requestPromise = fetch('/analyze-text', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
 
-    } else if (currentTab === 'voice') {
-        if (!audioBlob) {
-            alert('Please record some audio to analyze.');
-            return;
-        }
-        
-        const formData = new FormData();
-        formData.append('audio', audioBlob, 'recording.wav');
-        
-        requestPromise = fetch('http://localhost:5000/analyze-audio', {
-            method: 'POST',
-            body: formData
-        });
-    }
+            } else if (currentTab === 'photo') {
+                if (!photoUploadInput.files || photoUploadInput.files.length === 0) {
+                    alert('Please select an image to analyze.');
+                    return;
+                }
 
-    if (!requestPromise) return;
+                const formData = new FormData();
+                formData.append('image', photoUploadInput.files[0]);
 
-    // Show overlay and start cycling status messages
-    const overlay = document.getElementById('scan-overlay');
-    if (overlay) {
-        overlay.classList.remove('opacity-0', 'pointer-events-none');
-    }
-    statusTextEl.innerText = statusMessages[0];
-    const statusInterval = setInterval(() => {
-        currentStatusIdx = (currentStatusIdx + 1) % statusMessages.length;
-        statusTextEl.innerText = statusMessages[currentStatusIdx];
-    }, 750);
+                requestPromise = fetch('/analyze-image', {
+                    method: 'POST',
+                    body: formData
+                });
 
-    requestPromise
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(err => { throw new Error(err.error || 'Server error'); });
+            } else if (currentTab === 'voice') {
+                if (!audioBlob) {
+                    alert('Please record some audio to analyze.');
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('audio', audioBlob, 'recording.wav');
+
+                requestPromise = fetch('/analyze-audio', {
+                    method: 'POST',
+                    body: formData
+                });
             }
-            return response.json();
-        })
-        .then(data => {
-            clearInterval(statusInterval);
-            sessionStorage.setItem('scan_result', JSON.stringify(data));
-            window.location.href = 'analysis-result.html';
-        })
-        .catch(err => {
-            clearInterval(statusInterval);
+
+            if (!requestPromise) return;
+
+            // Show overlay and start cycling status messages
+            const overlay = document.getElementById('scan-overlay');
             if (overlay) {
-                overlay.classList.add('opacity-0', 'pointer-events-none');
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
             }
-            alert('Analysis failed: ' + err.message);
-        });
-}
-</script>
-</body></html>
+            statusTextEl.innerText = statusMessages[0];
+            const statusInterval = setInterval(() => {
+                currentStatusIdx = (currentStatusIdx + 1) % statusMessages.length;
+                statusTextEl.innerText = statusMessages[currentStatusIdx];
+            }, 750);
+
+            requestPromise
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(err => { throw new Error(err.error || 'Server error'); });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    clearInterval(statusInterval);
+                    sessionStorage.setItem('scan_result', JSON.stringify(data));
+                    window.location.href = 'analysis-result.html';
+                })
+                .catch(err => {
+                    clearInterval(statusInterval);
+                    if (overlay) {
+                        overlay.classList.add('opacity-0', 'pointer-events-none');
+                    }
+                    alert('Analysis failed: ' + err.message);
+                });
+        }
+    </script>
+</body>
+
+</html>
