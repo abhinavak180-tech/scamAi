@@ -33,7 +33,7 @@
         },
         {
             "src": "/",
-            "dest": "/index.html"
+            "dest": "/check-message.html"
         },
         {
             "src": "/(.*)",
