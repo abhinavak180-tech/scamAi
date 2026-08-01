@@ -1,0 +1,6 @@
+flask
+flask-cors
+flask-limiter
+python-dotenv
+groq
+google-generativeai

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Chat Support | SafeCall AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Public+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#ffac61",
+                    "secondary-container": "#a0f399",
+                    "surface-tint": "#2559bd",
+                    "on-secondary-fixed-variant": "#005312",
+                    "on-secondary-fixed": "#002204",
+                    "error-container": "#ffdad6",
+                    "surface": "#f8f9fb",
+                    "secondary": "#1b6d24",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-container": "#763f00",
+                    "outline-variant": "#c3c6d5",
+                    "secondary-fixed-dim": "#88d982",
+                    "on-primary-fixed": "#001946",
+                    "primary-fixed": "#dae2ff",
+                    "surface-container": "#eceef0",
+                    "surface-container-high": "#e6e8ea",
+                    "primary": "#00327d",
+                    "on-primary-container": "#a5bdff",
+                    "on-tertiary-fixed-variant": "#6d3a00",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#ffdcc2",
+                    "tertiary": "#552c00",
+                    "surface-container-highest": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "error": "#ba1a1a",
+                    "on-background": "#191c1e",
+                    "on-primary-fixed-variant": "#00419e",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#217128",
+                    "primary-container": "#0047ab",
+                    "outline": "#737784",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "on-tertiary-fixed": "#2e1500",
+                    "secondary-fixed": "#a3f69c",
+                    "surface-dim": "#d8dadc",
+                    "on-surface-variant": "#434653",
+                    "surface-variant": "#e0e3e5",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f8f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary-fixed-dim": "#ffb77a",
+                    "background": "#f8f9fb",
+                    "inverse-primary": "#b1c5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "margin-mobile": "16px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Public Sans"],
+                    "headline-md": ["Public Sans"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Public Sans"],
+                    "headline-lg": ["Public Sans"],
+                    "body-lg": ["Inter"],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .chat-container {
+            height: calc(100vh - 12rem);
+            max-height: 600px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 71, 171, 0.08);
+        }
+        .message-feed::-webkit-scrollbar {
+            width: 6px;
+        }
+        .message-feed::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .message-feed::-webkit-scrollbar-thumb {
+            background-color: #c3c6d5;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md flex flex-col min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50">
+<nav class="flex justify-between items-center px-gutter py-base w-full max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-display-lg font-bold text-primary cursor-pointer" onclick="window.location.href='check-message.html'">
+            SafeCall AI
+        </div>
+</nav>
+</header>
+<!-- Main Chat Interface -->
+<main class="flex-grow flex flex-col items-center justify-center py-lg px-margin-mobile md:px-gutter relative">
+<!-- Subtle Background Glows -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+<div class="absolute -top-[10%] -left-[5%] w-[40%] h-[40%] bg-primary-container rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[5%] w-[30%] h-[30%] bg-secondary-container rounded-full blur-[120px]"></div>
+</div>
+<div class="max-w-[800px] w-full z-10 glass-card rounded-2xl shadow-xl flex flex-col overflow-hidden border border-outline-variant/30">
+<!-- Chat Header -->
+<div class="bg-primary text-on-primary px-md py-sm flex justify-between items-center border-b border-outline/20">
+<div class="flex items-center gap-sm">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-white border-2 border-white/20">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary border-2 border-primary"></span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-white">Agent Sarah</h2>
+<p class="font-caption text-caption text-secondary-container">SafeCall Anti-Fraud Specialist</p>
+</div>
+</div>
+<div class="flex items-center gap-sm opacity-80">
+<span class="material-symbols-outlined text-white cursor-pointer hover:opacity-100">info</span>
+</div>
+</div>
+<!-- Messages Feed -->
+<div class="flex-grow p-md overflow-y-auto space-y-md message-feed bg-surface-container-lowest chat-container" id="chat-messages">
+<!-- Agent Message -->
+<div class="flex gap-sm items-start max-w-[85%]">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+</div>
+<div class="bg-surface-container p-md rounded-2xl rounded-tl-none border border-outline-variant/30 shadow-sm">
+<p class="font-body-md text-on-surface">Hello! I am Agent Sarah, your dedicated anti-fraud assistant. How can I help you today? Please paste any suspicious text or details about a call you received.</p>
+<span class="text-caption text-outline block mt-xs font-caption text-right">Just now</span>
+</div>
+</div>
+</div>
+<!-- Chat Input Area -->
+<div class="p-md bg-surface border-t border-outline-variant/30">
+<form class="flex gap-sm items-center" id="chat-form" onsubmit="sendMessage(event)">
+<input autocomplete="off" class="flex-grow bg-surface-container-lowest border border-outline-variant rounded-xl px-md py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md h-[54px]" id="chat-input" placeholder="Type your message here..." type="text"/>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-xl flex items-center justify-center shadow-md hover:bg-primary-container transition-all hover:scale-105 shrink-0" type="submit">
+<span class="material-symbols-outlined text-[24px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center mt-xl border-t border-outline-variant/20">
+<div>
+<span class="font-headline-md text-primary font-bold">SafeCall AI</span>
+<p class="font-body-md text-on-surface-variant mt-xs">© 2024 SafeCall AI. Protective Intelligence for Everyone.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="emergency-help.html">Emergency Contact</a>
+<a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+</div>
+</footer>
+<script>
+    const messagesContainer = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+
+    const replies = [
+        "I am looking into that right now. Please do NOT click any links or provide any financial or personal details.",
+        "Scammers often create a sense of urgency. Remember: banks and government agencies will never pressure you to transfer funds immediately.",
+        "I recommend blocking the sender's number on your device right away. Would you like me to guide you on how to do that?",
+        "Your safety is our priority. If you believe your account credentials have been compromised, please contact your financial provider immediately."
+    ];
+    let replyIndex = 0;
+
+    function appendMessage(text, sender, isAgent = false) {
+        const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isAgent ? 'flex gap-sm items-start max-w-[85%] animate-fade-in' : 'flex gap-sm items-start max-w-[85%] ml-auto justify-end animate-fade-in';
+        
+        const avatarHtml = isAgent ? 
+            `<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0"><span class="material-symbols-outlined text-[18px]">support_agent</span></div>` : '';
+            
+        const bubbleBg = isAgent ? 'bg-surface-container rounded-tl-none' : 'bg-primary-container text-on-primary-container rounded-tr-none';
+        
+        msgDiv.innerHTML = `
+            ${avatarHtml}
+            <div class="${bubbleBg} p-md rounded-2xl border border-outline-variant/30 shadow-sm">
+                <p class="font-body-md">${text}</p>
+                <span class="text-caption text-outline block mt-xs font-caption text-right">${timeStr}</span>
+            </div>
+        `;
+        
+        messagesContainer.appendChild(msgDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function sendMessage(e) {
+        e.preventDefault();
+        const text = chatInput.value.strip ? chatInput.value.strip() : chatInput.value.trim();
+        if (!text) return;
+        
+        appendMessage(text, 'User', false);
+        chatInput.value = '';
+        
+        // Simulate agent typing
+        setTimeout(() => {
+            const agentReply = replies[replyIndex % replies.length];
+            replyIndex++;
+            appendMessage(agentReply, 'Agent', true);
+        }, 1200);
+    }
+</script>
+</body>
+</html>

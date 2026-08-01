@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Learn &amp; Prevent | SafeCall AI Educational Hub</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Public+Sans:wght@100..900&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#ffac61",
+                        "secondary-container": "#a0f399",
+                        "surface-tint": "#2559bd",
+                        "on-secondary-fixed-variant": "#005312",
+                        "on-secondary-fixed": "#002204",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9fb",
+                        "secondary": "#1b6d24",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#763f00",
+                        "outline-variant": "#c3c6d5",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-primary-fixed": "#001946",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#00327d",
+                        "on-primary-container": "#a5bdff",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffdcc2",
+                        "tertiary": "#552c00",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-on-surface": "#eff1f3",
+                        "error": "#ba1a1a",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#00419e",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#217128",
+                        "primary-container": "#0047ab",
+                        "outline": "#737784",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-tertiary-fixed": "#2e1500",
+                        "secondary-fixed": "#a3f69c",
+                        "surface-dim": "#d8dadc",
+                        "on-surface-variant": "#434653",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed-dim": "#ffb77a",
+                        "background": "#f8f9fb",
+                        "inverse-primary": "#b1c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F5F7F9;
+            color: #191C1E;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .tonal-card {
+            background: #ffffff;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e6e8ea;
+        }
+
+        .alert-stripe-red {
+            border-left: 4px solid #ba1a1a;
+        }
+
+        .alert-stripe-amber {
+            border-left: 4px solid #763f00;
+        }
+
+        .alert-stripe-green {
+            border-left: 4px solid #1b6d24;
+        }
+
+        .pulse-soft {
+            animation: pulse-animation 3s infinite ease-in-out;
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body-md text-body-md">
+    <!-- TopNavBar -->
+    <nav class="bg-surface shadow-sm sticky top-0 z-50">
+        <div class="flex justify-between items-center px-gutter py-base w-full max-w-container-max mx-auto h-20">
+            <div class="flex items-center gap-base">
+                <span class="material-symbols-outlined text-primary text-[32px]"
+                    style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+                <span class="font-display-lg text-display-lg font-bold text-primary cursor-pointer"
+                    onclick="window.location.href='check-message.html'">SafeCall AI</span>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero / Search Section -->
+    <header class="relative overflow-hidden bg-primary-container text-on-primary-container py-xl">
+        <div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
+            <h1 class="font-display-lg text-display-lg mb-md max-w-2xl mx-auto">Knowledge is your first line of defense.
+            </h1>
+            <p class="font-body-lg text-body-lg mb-lg opacity-90 max-w-xl mx-auto">Explore our intelligence hub to
+                recognize, report, and resist modern scam tactics using AI-powered insights.</p>
+            <div class="max-w-2xl mx-auto relative">
+                <span
+                    class="absolute left-md top-1/2 -translate-y-1/2 material-symbols-outlined text-on-primary-container opacity-60">search</span>
+                <input
+                    class="w-full pl-xl pr-md py-md rounded-xl bg-surface text-on-surface border-none focus:ring-4 focus:ring-primary-fixed shadow-lg transition-all text-body-md"
+                    placeholder="Search for scam types, keywords, or suspicious phrases..." type="text" />
+            </div>
+        </div>
+    </header>
+    <main class="max-w-container-max mx-auto px-gutter py-lg grid grid-cols-1 lg:grid-cols-12 gap-lg">
+        <!-- Main Content: Educational Bento Grid -->
+        <div class="lg:col-span-8">
+            <div class="flex items-center justify-between mb-md">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Common Scam Types</h2>
+                <div class="flex gap-xs">
+                    <span
+                        class="bg-surface-container-high text-on-surface-variant px-sm py-xs rounded-full font-label-md">All
+                        Topics</span>
+                    <span
+                        class="text-on-surface-variant px-sm py-xs rounded-full font-label-md hover:bg-surface-container transition-colors cursor-pointer">Phone</span>
+                    <span
+                        class="text-on-surface-variant px-sm py-xs rounded-full font-label-md hover:bg-surface-container transition-colors cursor-pointer">Email</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+                <!-- Phishing Card -->
+                <article class="tonal-card rounded-xl p-md flex flex-col hover:shadow-md transition-shadow group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+                        <span
+                            class="material-symbols-outlined text-on-primary-fixed-variant text-[28px]">alternate_email</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-sm text-primary">Phishing Attacks</h3>
+                    <p class="font-body-md text-on-surface-variant mb-lg flex-grow">Deceptive emails and messages
+                        designed to steal sensitive data like login credentials or credit card numbers by masquerading
+                        as a trusted entity.</p>
+                    <button class="flex items-center gap-xs font-label-md text-primary hover:gap-sm transition-all">
+                        Read More <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </article>
+                <!-- Tech Support Card -->
+                <article class="tonal-card rounded-xl p-md flex flex-col hover:shadow-md transition-shadow group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+                        <span
+                            class="material-symbols-outlined text-on-secondary-fixed-variant text-[28px]">support_agent</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-sm text-secondary">Tech Support Scams</h3>
+                    <p class="font-body-md text-on-surface-variant mb-lg flex-grow">Fraudsters claim your computer has a
+                        virus to gain remote access or sell unnecessary software services and subscriptions.</p>
+                    <button class="flex items-center gap-xs font-label-md text-secondary hover:gap-sm transition-all">
+                        Read More <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </article>
+                <!-- Romance Scam Card -->
+                <article
+                    class="tonal-card rounded-xl p-md flex flex-col hover:shadow-md transition-shadow group md:col-span-2">
+                    <div class="flex flex-col md:flex-row gap-md">
+                        <div class="md:w-1/3 shrink-0">
+                            <div class="w-full h-48 rounded-lg bg-cover bg-center"
+                                data-alt="A cinematic, high-quality photograph of a laptop screen displaying a generic dating app profile in a dimly lit, warm cozy room. The lighting is soft and focused, creating a sense of intimacy and emotional vulnerability. The visual style is professional, polished, and calm, using a palette of soft blues and warm ambers to reflect a modern digital experience."
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpfSI37NdhEKVyGJAlC9eecDJnESlsXXCaLRJojqLW2N9Rq040q90H9A1xyOdxAP6jMxT832R0wh29b4IL4_2lqtzA_7acIQouqgyz1J-Mz-oYYMclGmiuf4sEBvqbJObx9b64HWtxJ5WVPcEZLtlbAFXyZYsy08QfVcs-ZrLvtzK54hVgUO2dHqJu_wHb2SgfetT7awUA8CEkNdLosyPaqDmNS2w-BNwR4t0FyAdxZxsITlhdRg1QMSauRmFcrnPQMPDgmK3Qmonb')">
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h3 class="font-headline-md text-headline-md mb-sm text-on-surface">Romance &amp; Trust
+                                Scams</h3>
+                            <p class="font-body-md text-on-surface-variant mb-lg">Scammers create fake online profiles
+                                to gain a victim's trust, eventually asking for money for "emergencies," travel, or
+                                investments. These are often long-term emotional manipulations.</p>
+                            <button
+                                class="w-fit border border-primary text-primary px-md py-sm rounded-lg font-label-md hover:bg-primary-fixed transition-all">
+                                Detailed Guide: Spotting the Signs
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                <!-- AI Voice Cloning Card -->
+                <article class="tonal-card rounded-xl p-md flex flex-col hover:shadow-md transition-shadow group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+                        <span
+                            class="material-symbols-outlined text-on-tertiary-fixed-variant text-[28px]">record_voice_over</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-sm text-tertiary">AI Voice Cloning</h3>
+                    <p class="font-body-md text-on-surface-variant mb-lg flex-grow">The latest threat using deepfake
+                        technology to mimic a loved one's voice, usually during a fake emergency call to solicit funds.
+                    </p>
+                    <button class="flex items-center gap-xs font-label-md text-tertiary hover:gap-sm transition-all">
+                        Read More <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </article>
+                <!-- Investment Card -->
+                <article class="tonal-card rounded-xl p-md flex flex-col hover:shadow-md transition-shadow group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-on-surface text-[28px]">trending_up</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md mb-sm text-on-surface">Investment Fraud</h3>
+                    <p class="font-body-md text-on-surface-variant mb-lg flex-grow">Unsolicited offers for
+                        cryptocurrency, stocks, or real estate that promise high returns with zero risk, often leading
+                        to total loss.</p>
+                    <button class="flex items-center gap-xs font-label-md text-on-surface hover:gap-sm transition-all">
+                        Read More <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </article>
+            </div>
+        </div>
+        <!-- Sidebar: Latest Alerts -->
+        <aside class="lg:col-span-4">
+            <div class="tonal-card rounded-xl p-md sticky top-24">
+                <div class="flex items-center justify-between mb-md">
+                    <h2 class="font-headline-md text-headline-md">Latest Alerts</h2>
+                    <span class="flex items-center gap-xs text-error font-label-md pulse-soft">
+                        <span class="w-2 h-2 rounded-full bg-error"></span>
+                        Live Map
+                    </span>
+                </div>
+                <div class="space-y-md">
+                    <!-- Alert 1 -->
+                    <div class="alert-stripe-red bg-error-container/30 p-sm rounded-r-lg">
+                        <div class="flex justify-between items-start mb-xs">
+                            <span class="font-label-md text-error">High Risk</span>
+                            <span class="font-caption text-on-surface-variant">2h ago</span>
+                        </div>
+                        <h4 class="font-label-md text-on-surface mb-xs">Bank Verification SMS</h4>
+                        <p class="font-caption text-on-surface-variant mb-sm">Large volume of fake 'Security Alert'
+                            texts reported in the Metro area.</p>
+                        <a class="text-error font-label-md underline" href="#">Learn how to block</a>
+                    </div>
+                    <!-- Alert 2 -->
+                    <div class="alert-stripe-amber bg-tertiary-fixed/20 p-sm rounded-r-lg">
+                        <div class="flex justify-between items-start mb-xs">
+                            <span class="font-label-md text-on-tertiary-fixed-variant">Moderate</span>
+                            <span class="font-caption text-on-surface-variant">5h ago</span>
+                        </div>
+                        <h4 class="font-label-md text-on-surface mb-xs">Package Delivery Scam</h4>
+                        <p class="font-caption text-on-surface-variant mb-sm">Phishing emails masquerading as courier
+                            tracking notifications.</p>
+                        <a class="text-on-tertiary-fixed-variant font-label-md underline" href="#">View examples</a>
+                    </div>
+                    <!-- Map Integration -->
+                    <div class="mt-lg">
+                        <p class="font-label-md mb-sm text-on-surface-variant uppercase tracking-wider">Your Local Area
+                        </p>
+                        <div class="relative rounded-lg overflow-hidden h-40 group">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                data-location="Chicago"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwuP_H4giNY7U2AYMuU6mRSHMq3ktgK8_XnIhwgenLVcuQdnhN_JF5M42XOfCdz2LE6JSnt1HT5M6ZpYK2b9Olk1stxOt3SLGtS1uamhHKRF8fWuyucubU4L6XaG_9cfHA_s7ry-4kz0nhgx-ElPm70KCrxznyGRTqdCXpcs-9pZCb8B3jFBll-t8p5V3SnEAWo4apbxqv85Ufr8mfwoem4DYMpYJy2d_NFmjnulnDhkk_CnQHxDVd7vYO_ILlNSIDi21GMg2oFswF" />
+                            <div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+                                <div
+                                    class="bg-surface/90 backdrop-blur-sm px-md py-sm rounded-full shadow-lg flex items-center gap-xs">
+                                    <span class="material-symbols-outlined text-error"
+                                        style="font-variation-settings: 'FILL' 1;">location_on</span>
+                                    <span class="font-label-md">12 Reported nearby</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="w-full mt-lg py-sm rounded-lg bg-surface-container text-on-surface font-label-md hover:bg-surface-container-high transition-colors">
+                    Set Alert Notifications
+                </button>
+            </div>
+            <!-- Prevention Tip of the Day -->
+            <div class="mt-md tonal-card rounded-xl p-md bg-secondary-container/10 border-secondary/20">
+                <div class="flex items-center gap-sm mb-sm text-secondary">
+                    <span class="material-symbols-outlined">lightbulb</span>
+                    <span class="font-label-md">SafeTip of the Day</span>
+                </div>
+                <p class="font-body-md italic text-on-secondary-container">"Never share a One-Time Password (OTP) with
+                    anyone over the phone, even if they claim to be from your bank. Banks will never ask for this code."
+                </p>
+            </div>
+        </aside>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-highest mt-xl">
+        <div
+            class="w-full py-lg px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+            <div class="flex flex-col items-center md:items-start gap-xs">
+                <div class="flex items-center gap-xs mb-xs">
+                    <span class="material-symbols-outlined text-primary text-[24px]">shield_with_heart</span>
+                    <span class="font-headline-md text-headline-md text-primary">SafeCall AI</span>
+                </div>
+                <p class="font-body-md text-on-surface-variant">© 2024 SafeCall AI. Protective Intelligence for
+                    Everyone.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-md"><a
+                    class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                    href="emergency-help.html">Emergency Contact</a>
+                <a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                    href="privacy.html">Privacy Policy</a>
+                <a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                    href="terms.html">Terms of Service</a>
+                <a class="font-body-md text-on-surface-variant hover:underline hover:text-primary transition-colors"
+                    href="#">Language: English</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Micro-interaction for search focus
+        const searchInput = document.querySelector('input[type="text"]');
+        const heroSection = document.querySelector('header');
+
+        searchInput.addEventListener('focus', () => {
+            heroSection.classList.add('shadow-inner');
+        });
+
+        searchInput.addEventListener('blur', () => {
+            heroSection.classList.remove('shadow-inner');
+        });
+
+        // Simple filtering logic simulation
+        const chips = document.querySelectorAll('.flex.gap-xs span');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('bg-surface-container-high', 'text-on-surface'));
+                chip.classList.add('bg-surface-container-high', 'text-on-surface');
+            });
+        });
+    </script>
+</body>
+
+</html>
