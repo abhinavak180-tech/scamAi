@@ -122,7 +122,7 @@ def get_groq_web_check(text):
             messages=[
                 {"role": "user", "content": prompt}
             ],
-            timeout=10.0 # Don't hang forever
+            timeout=5.0 # Don't hang forever
         )
         return completion.choices[0].message.content
     except Exception as e:
